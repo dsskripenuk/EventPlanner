@@ -9,13 +9,24 @@ import { EventModel } from 'src/app/models/event.model'
 })
 export class ListEventsComponent implements OnInit {
 
-  constructor(private eventService: EventsService) { }
+  constructor(private eventsService: EventsService) { }
 
   eventsList!:EventModel[];
+  visibleEventsList!:EventModel[];
+  hiddenEventsList!:EventModel[];
+
 
   ngOnInit() {
-    this.eventsList = this.eventService.getEvents();
-    console.log("Event list component");
+    this.eventsList = this.eventsService.getEvents();
+    this.visibleEventsList=this.eventsService.getVisibleEvents();
+    this.hiddenEventsList=this.eventsService.getHiddenEvents();
+
+    this.eventsService.changeEvents.subscribe(data => {
+      this.visibleEventsList=this.eventsService.getVisibleEvents();
+      this.hiddenEventsList=this.eventsService.getHiddenEvents();
+    })
+
+    console.log(this.eventsList)
   }
 
 }

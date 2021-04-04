@@ -1,4 +1,26 @@
-<!-- <div class="card" *ngIf="isHidden===true" style="visibility: hidden;">
+<link rel="stylesheet" href="EventItem.component.css">
+<div class="cardCont">
+
+  <div class="card text-center">
+    <div class="card-header" >
+      <img class="card-img-top" height="200px" width="100%"[src]="myEvent.image">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{myEvent.title}}</h5>
+    </div>
+    <div class="card-footer">
+      <i (click)="changePriority()" *ngIf="myEvent.isPriority ===  false" class="far fa-square check"></i>
+      <i (click)="changePriority()" *ngIf="myEvent.isPriority === true" class="far fa-check-square check"></i>
+      <i (click)="changeIsHidden()" *ngIf="myEvent.isHidden === false" class="fas fa-eye eye"></i>
+      <i (click)="changeIsHidden()" *ngIf="myEvent.isHidden === true" class="fas fa-eye-slash eye"></i>
+    </div>
+    <div class="card-footer text-muted">
+      {{myEvent.date}}
+    </div>
+  </div>
+
+<!-- </div>  
+<div class="card"  style="visibility: visible;">
   <img height="300px" [src]="myEvent.image">
   <div class="card-body">
     <h5 class="card-title">{{myEvent.title}}</h5>
@@ -10,28 +32,6 @@
       <i (click)="changePriority()" *ngIf="isPriority===true" class="fas fa-check-square fa-2x green-icon icon"
         style="color:green"></i>
     </div>
-    <div class="card-body">
-      <i (click)="hideCard()" class="fas fa-eye fa-2x"></i>
-    </div>
-  </div>
-</div>
 
- -->
-
-<div class="card" *ngIf="isHidden===false" style="visibility: visible;">
-  <img height="300px" [src]="myEvent.image">
-  <div class="card-body">
-    <h5 class="card-title">{{myEvent.title}}</h5>
-    <p class="card-text">{{myEvent.description}}</p>
-    <p class="card-text">{{myEvent.date}}</p>
-    <div class="card-body">
-      <i (click)="changePriority()" *ngIf="isPriority===false" class="far fa-check-square fa-2x icon"
-        style="color:red"></i>
-      <i (click)="changePriority()" *ngIf="isPriority===true" class="fas fa-check-square fa-2x green-icon icon"
-        style="color:green"></i>
-    </div>
-    <!-- <div class="card-body">
-      <i (click)="hideCard()" class="fas fa-eye fa-2x"></i>
-    </div> -->
   </div>
-</div>
+</div> -->

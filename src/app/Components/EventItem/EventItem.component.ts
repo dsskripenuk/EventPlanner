@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EventModel } from 'src/app/models/event.model';
+import { EventsService } from 'src/app/core/events.service';
 
 @Component({
   selector: 'EventItem',
@@ -8,7 +9,7 @@ import { EventModel } from 'src/app/models/event.model';
 })
 export class EventItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private eventsService: EventsService) { }
 
   @Input() myEvent!: EventModel;
   isPriority: boolean = false;
@@ -19,12 +20,13 @@ export class EventItemComponent implements OnInit {
   }
 
   changePriority(): void {
-    this.isPriority = !this.isPriority;
+    // this.myEvent.isPriority != this.myEvent.isPriority;
+    this.eventsService.changeIsPriority(this.myEvent.id)
+    // this.isPriority = !this.isPriority;
   }
 
-  hideCard(): void {
-    this.isHidden = !this.isHidden;
-    
+  changeIsHidden(): void{
+    this.eventsService.changeIsHidden(this.myEvent.id);
   }
 
 }
