@@ -1,0 +1,37 @@
+<!-- <div class="card" *ngIf="isHidden===true" style="visibility: hidden;">
+  <img height="300px" [src]="myEvent.image">
+  <div class="card-body">
+    <h5 class="card-title">{{myEvent.title}}</h5>
+    <p class="card-text">{{myEvent.description}}</p>
+    <p class="card-text">{{myEvent.date}}</p>
+    <div class="card-body">
+      <i (click)="changePriority()" *ngIf="isPriority===false" class="far fa-check-square fa-2x icon"
+        style="color:red"></i>
+      <i (click)="changePriority()" *ngIf="isPriority===true" class="fas fa-check-square fa-2x green-icon icon"
+        style="color:green"></i>
+    </div>
+    <div class="card-body">
+      <i (click)="hideCard()" class="fas fa-eye fa-2x"></i>
+    </div>
+  </div>
+</div>
+
+ -->
+
+<div class="card" *ngIf="isHidden===false" style="visibility: visible;">
+  <img height="300px" [src]="myEvent.image">
+  <div class="card-body">
+    <h5 class="card-title">{{myEvent.title}}</h5>
+    <p class="card-text">{{myEvent.description}}</p>
+    <p class="card-text">{{myEvent.date}}</p>
+    <div class="card-body">
+      <i (click)="changePriority()" *ngIf="isPriority===false" class="far fa-check-square fa-2x icon"
+        style="color:red"></i>
+      <i (click)="changePriority()" *ngIf="isPriority===true" class="fas fa-check-square fa-2x green-icon icon"
+        style="color:green"></i>
+    </div>
+    <!-- <div class="card-body">
+      <i (click)="hideCard()" class="fas fa-eye fa-2x"></i>
+    </div> -->
+  </div>
+</div>
