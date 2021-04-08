@@ -14,6 +14,7 @@ export class EventItemComponent implements OnInit {
   @Input() myEvent!: EventModel;
   isPriority: boolean = false;
   isHidden: boolean = false;
+  modalVis: boolean = false;
 
   ngOnInit() {
 
@@ -23,6 +24,10 @@ export class EventItemComponent implements OnInit {
     // this.myEvent.isPriority != this.myEvent.isPriority;
     this.eventsService.changeIsPriority(this.myEvent.id)
     // this.isPriority = !this.isPriority;
+  }
+
+  modal():void{
+    this.modalVis=true;
   }
 
   changeIsHidden(): void{
